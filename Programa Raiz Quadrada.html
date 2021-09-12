@@ -1,0 +1,47 @@
+<!docutype html>
+      <html lang="pt-br">
+      <head>
+           <meta charset="utf-8">
+           <meta name="viewport" content="width=device-widht, initial-scale=1.0">
+           <title>Raiz Quadrada</title>
+      </head>
+      <body>
+           <h1>Programa Raiz Quadrada</h1>
+           <p> Número:  <input type="text" id="inN">
+           <p><input type="button" value="Exibir Raiz Quadrada" id="btR">   <input type="button" value= "Limpar" id="btL"> </p>
+           
+           <h3 id="outResp"></h3>
+      <script>
+          function RaizQuadrada(){
+           var inN = document.getElementById("inN");
+           var outResp = document.getElementById("outResp");
+           
+           var num = Number(inN.value);
+           
+           if(num==0|| isNaN(num)){
+           alert("Digite um número válido...");
+           inN.focus();
+           return;
+           }
+            
+           var raiz = Math.sqrt(num);
+           if (raiz == Math.floor(raiz)){ outResp.textContent = "Raiz " + raiz;}
+          else
+          {outResp.textContent ="Não exite Raiz " + num}
+          }
+                    
+          var btR = document.getElementById("btR");
+          btR.addEventListener("click",RaizQuadrada)
+          
+          function limpaTela(){
+          document.getElementById("inN").value="";
+          document.getElementById("outResp").textContent="";
+          document.getElementById("inN").focus() 
+          }
+          var btL = document.getElementById("btL");
+          btL.addEventListener("click",limpaTela);
+
+        </script>
+        </body>
+        </html>
+           
